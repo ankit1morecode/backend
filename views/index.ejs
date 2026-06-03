@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+</head>
+<body>
+    <h1>Notes</h1>
+    <form action="/notes" method="post">
+        <label for="title">title</label>
+        <input type="text" name="title" id="title">
+        <br><br>
+        <label for="description">description</label>
+        <input type="text" name="description">
+        <button type="submit" class="add-btn">Add In list</button>
+    </form>
+    <ul>
+        <% if(arr.length!=0){for(let i=0; i < arr.length; i++) { %>
+            <li>
+                Title : <%= arr[i].title %> <br>
+                Description : <%= arr[i].description %> <br>
+                <form action="/delete?_method=DELETE" method="post">
+                    <button class="delete-button">delete</button>
+                </form>
+            </li>
+        <% }} %>
+    </ul>
+</body>
+</html>
